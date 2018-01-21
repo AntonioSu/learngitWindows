@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery.extend demo</title>
+    <script src="jquery-2.1.4.min.js"></script>
+</head>
+<body>
+
+<div id="log">sd</div>
+
+<script>
+    var object1 = {
+        apple: 0,
+        banana: { weight: 52, price: 100 },
+        cherry: 97
+    };
+    var object2 = {
+        banana: { price: 200 },
+        durian: 100
+    };
+
+    // Merge object2 into object1
+    $.extend( object1, object2 );
+
+    // Assuming JSON.stringify - not available in IE<8
+    $( "#log" ).append( JSON.stringify( object1 ) );
+
+    $("<div>",{
+        text:"这是动态页面",
+        clic:function () {
+            $(this).toggleClass("test");
+        }
+    }).appendTo("body");
+</script>
+
+</body>
+</html>
